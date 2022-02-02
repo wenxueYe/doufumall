@@ -36,7 +36,7 @@ public class CategoryController {
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = categoryService.queryPage(params);
-
+        System.out.println("hiiiiiiiiiiiiiiii");
         return R.ok().put("page", page);
     }
 

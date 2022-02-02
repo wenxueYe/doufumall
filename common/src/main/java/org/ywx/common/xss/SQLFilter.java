@@ -8,7 +8,7 @@
 
 package org.ywx.common.xss;
 import org.apache.commons.lang.StringUtils;
-import org.yewenxue.common.exception.RRException;
+import org.ywx.common.exception.RRException;
 
 /**
  * SQL过滤
