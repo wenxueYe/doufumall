@@ -10,6 +10,14 @@ spring:
           data-id: mall-member.yaml
           group: dev
           refresh: true
+        shared-configs[1]:
+          data-id: datasource.yaml
+          group: dev
+          refresh: true
+        shared-configs[2]:
+          data-id: mybatis-plus.yaml
+          group: dev
+          refresh: true
         namespace: f164926e-aef6-414a-84eb-b5852dcac4e6
   application:
     name: mall-member
