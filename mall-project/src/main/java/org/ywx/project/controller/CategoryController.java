@@ -1,6 +1,7 @@
 package org.ywx.project.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,11 +34,11 @@ public class CategoryController {
     /**
      * 列表
      */
-    @RequestMapping("/list")
+    @RequestMapping("/list/tree")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = categoryService.queryPage(params);
-        System.out.println("hiiiiiiiiiiiiiiii");
-        return R.ok().put("page", page);
+//        PageUtils page = categoryService.queryPage(params);
+        final List<CategoryEntity> categoryEntities = categoryService.listWithTree();
+        return R.ok().put("data", categoryEntities);
     }
 
 
@@ -76,8 +77,9 @@ public class CategoryController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] catIds){
-		categoryService.removeByIds(Arrays.asList(catIds));
-
+        //删除之前需要判断待删除的菜单那是否被别的地方所引用。
+//		categoryService.removeByIds(Arrays.asList(catIds));
+        categoryService.removeMenuByIds(Arrays.asList(catIds));
         return R.ok();
     }
 
