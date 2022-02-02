@@ -1,0 +1,18 @@
+server:
+  port: 88
+
+spring:
+  application:
+    name: mall-gateway
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 0bf025ce-594e-490f-a1a6-f253c92e3477
+        shared-configs[0]:
+          data-id: gateway.yaml
+          group: dev
+          refresh: true
+      discovery:
+        server-addr: 127.0.0.1:8848
+

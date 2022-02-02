@@ -17,6 +17,7 @@
         <module>mall-project</module>
         <module>mall-ware</module>
         <module>renren-fast</module>
+        <module>mall-gateway</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
@@ -57,6 +58,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
 
             <dependency>
                 <groupId>org.projectlombok</groupId>
